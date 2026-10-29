@@ -1,1 +1,197 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAOMI | Corporate Gifts & Printing</title>
+<style>
+:root{--green:#013125;--mid:#1b5e4b;--ivory:#f1ede4;--gold:#c8a35a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:var(--green);background:#fff}
+button,a{cursor:pointer}
+button{font:inherit}
+header{background:var(--green);color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-size:28px;letter-spacing:5px;font-weight:bold}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+.lang{background:var(--ivory);color:var(--green);border:0;padding:10px 14px;border-radius:4px}
+.hero{padding:85px 7%;background:linear-gradient(120deg,#013125,#1b5e4b);color:white}
+.hero small{letter-spacing:3px;color:#c8d9cf}
+.hero h1{font-size:clamp(36px,6vw,66px);max-width:750px;line-height:1.12;margin:22px 0}
+.hero p{max-width:580px;line-height:1.8;color:#e1ebe5}
+.btn{display:inline-block;background:var(--gold);color:#102f24;padding:14px 22px;border:0;border-radius:3px;text-decoration:none;font-weight:bold;margin:10px 8px 0 0}
+.btn.outline{background:transparent;border:1px solid white;color:white}
+section{padding:60px 7%}
+.eyebrow{color:var(--mid);letter-spacing:2px;font-size:12px;font-weight:bold}
+h2{font-size:clamp(27px,4vw,40px);margin:12px 0}
+.intro{max-width:650px;line-height:1.8;color:#5c6b64}
+.categories,.products,.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:30px}
+.category{background:var(--ivory);padding:26px 20px;min-height:130px}
+.category h3{margin-top:0}
+.category p,.product p{color:#66746d;line-height:1.6;font-size:14px}
+.products{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.product{border:1px solid #e6eae7;padding:14px;display:flex;flex-direction:column}
+.product-visual{height:155px;background:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:46px}
+.product h3{margin-bottom:4px}
+.product button{margin-top:auto;background:var(--green);color:white;border:0;padding:12px}
+.product select{padding:8px;margin-bottom:10px;border:1px solid #ddd}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+.filters button{background:white;color:var(--green);border:1px solid var(--green);padding:9px 13px}
+.filters button.active{background:var(--green);color:white}
+.selection{background:var(--ivory)}
+.selection-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #d5ddd7}
+.selection-item button{border:0;background:none;color:#a33}
+.note{width:100%;min-height:90px;padding:12px;border:1px solid #ccd5cf;font:inherit;margin:15px 0}
+.feature{padding:22px;border-left:3px solid var(--gold);background:#fafaf8}
+footer{background:var(--green);color:white;padding:35px 7%;line-height:1.9}
+footer a{color:white}
+[hidden]{display:none!important}
+@media(max-width:600px){header{padding:16px 5%}.hero{padding:60px 6%}section{padding:45px 6%}.logo{font-size:23px}nav{gap:12px}}
+</style>
+</head>
+<body>
+<header>
+  <a href="#home" class="logo" style="color:white;text-decoration:none">NAOMI</a>
+  <nav>
+    <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+    <a href="#gifts" data-en="Corporate Gifts" data-ar="الهدايا للشركات">Corporate Gifts</a>
+    <a href="#printing" data-en="Printing" data-ar="الطباعة">Printing</a>
+    <a href="#about" data-en="About" data-ar="من نحن">About</a>
+    <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+  </nav>
+  <button class="lang" id="languageButton" onclick="toggleLanguage()">العربية</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <small data-en="CORPORATE GIFTING & PRINTING SOLUTIONS" data-ar="هدايا الشركات وحلول الطباعة">CORPORATE GIFTING & PRINTING SOLUTIONS</small>
+  <h1 data-en="Your Creative Partner, Not Just a Vendor" data-ar="شريكك في الإبداع مش مجرد مورد">Your Creative Partner, Not Just a Vendor</h1>
+  <p data-en="Thoughtful corporate gifts and professional printing solutions that help businesses represent their brands and build stronger relationships." data-ar="هدايا مخصصة للشركات وحلول طباعة احترافية تساعدك على التعبير عن هوية شركتك وبناء علاقات أقوى مع عملائك وفريقك">Thoughtful corporate gifts and professional printing solutions that help businesses represent their brands and build stronger relationships.</p>
+  <a class="btn" href="#gifts" data-en="Explore Our Products" data-ar="اكتشفي منتجاتنا">Explore Our Products</a>
+  <a class="btn outline" href="#contact" data-en="Request a Quote" data-ar="اطلبي عرض سعر">Request a Quote</a>
+</section>
+
+<section id="gifts">
+  <div class="eyebrow" data-en="WHAT WE OFFER" data-ar="خدماتنا">WHAT WE OFFER</div>
+  <h2 data-en="Corporate Giveaways & Gifts" data-ar="هدايا الشركات والهدايا المخصصة">Corporate Giveaways & Gifts</h2>
+  <p class="intro" data-en="From everyday essentials to premium gift sets, find options that fit your team, clients and corporate events." data-ar="من المنتجات اليومية إلى مجموعات الهدايا المميزة اختاري ما يناسب فريقك وعملاءك وفعاليات شركتك">From everyday essentials to premium gift sets, find options that fit your team, clients and corporate events.</p>
+  <div class="categories">
+    <div class="category"><h3>CLASS A</h3><p data-en="Premium corporate gift sets" data-ar="مجموعات هدايا شركات فاخرة">Premium corporate gift sets</p></div>
+    <div class="category"><h3>CLASS B</h3><p data-en="Practical and elegant gift sets" data-ar="مجموعات هدايا عملية وأنيقة">Practical and elegant gift sets</p></div>
+    <div class="category"><h3>CLASS C</h3><p data-en="Everyday corporate essentials" data-ar="هدايا عملية للاستخدام اليومي">Everyday corporate essentials</p></div>
+  </div>
+  <div class="filters" id="filters">
+    <button class="active" data-filter="all" data-en="All Products" data-ar="كل المنتجات">All Products</button>
+    <button data-filter="sets" data-en="Gift Sets" data-ar="مجموعات الهدايا">Gift Sets</button>
+    <button data-filter="notebooks" data-en="Notebooks" data-ar="نوت بوك">Notebooks</button>
+    <button data-filter="pens" data-en="Pens" data-ar="أقلام">Pens</button>
+    <button data-filter="mugs" data-en="Mugs" data-ar="مجّات">Mugs</button>
+    <button data-filter="electronics" data-en="Electronics" data-ar="إلكترونيات">Electronics</button>
+  </div>
+  <div class="products" id="products"></div>
+</section>
+
+<section id="printing" style="background:#fafaf8">
+  <div class="eyebrow" data-en="BRANDED MATERIALS" data-ar="مطبوعات تحمل هوية شركتك">BRANDED MATERIALS</div>
+  <h2 data-en="Printing Solutions" data-ar="حلول الطباعة">Printing Solutions</h2>
+  <p class="intro" data-en="Professional printing for your business communications, events and everyday office needs." data-ar="حلول طباعة احترافية لمراسلات شركتك وفعالياتها واحتياجات المكتب اليومية">Professional printing for your business communications, events and everyday office needs.</p>
+  <div class="categories">
+    <div class="category"><h3 data-en="Business Cards" data-ar="كروت شخصية">Business Cards</h3></div>
+    <div class="category"><h3 data-en="Brochures & Flyers" data-ar="بروشورات وفلايرز">Brochures & Flyers</h3></div>
+    <div class="category"><h3 data-en="Folders & Notepads" data-ar="فولدرات ونوت باد">Folders & Notepads</h3></div>
+    <div class="category"><h3 data-en="Custom Printing" data-ar="مطبوعات مخصصة">Custom Printing</h3></div>
+  </div>
+</section>
+
+<section class="selection" id="my-selection">
+  <div class="eyebrow" data-en="YOUR REQUEST" data-ar="طلبك">YOUR REQUEST</div>
+  <h2 data-en="My Selection" data-ar="اختياراتي">My Selection</h2>
+  <p class="intro" data-en="Choose the products you are interested in and send us one quotation request." data-ar="اختاري المنتجات اللي محتاجاها وابعتي لنا طلب عرض سعر واحد">Choose the products you are interested in and send us one quotation request.</p>
+  <div id="selectionItems"><p data-en="No products selected yet." data-ar="لم تختاري أي منتجات حتى الآن">No products selected yet.</p></div>
+  <label for="customerNote" data-en="General note (optional)" data-ar="ملاحظات عامة (اختياري)">General note (optional)</label>
+  <textarea class="note" id="customerNote" placeholder="Tell us about your requirements..."></textarea>
+  <button class="btn" onclick="sendWhatsApp()" data-en="Send Request via WhatsApp" data-ar="إرسال الطلب عبر واتساب">Send Request via WhatsApp</button>
+</section>
+
+<section id="about">
+  <div class="eyebrow" data-en="ABOUT NAOMI" data-ar="عن NAOMI">ABOUT NAOMI</div>
+  <h2 data-en="Details Make the Difference" data-ar="التفاصيل هي اللي بتصنع الفرق">Details Make the Difference</h2>
+  <p class="intro" data-en="NAOMI is a B2B partner for corporate giveaways, customized gifts and printing solutions. We help businesses appreciate clients, recognize teams and represent their brands through carefully selected products." data-ar="NAOMI شريك للشركات في الهدايا المخصصة وحلول الطباعة بنساعد الشركات تقدر عملاءها وتحتفل بفريقها وتعبر عن هويتها من خلال منتجات يتم اختيارها بعناية">NAOMI is a B2B partner for corporate giveaways, customized gifts and printing solutions. We help businesses appreciate clients, recognize teams and represent their brands through carefully selected products.</p>
+  <div class="features">
+    <div class="feature" data-en="Corporate gifting for teams and clients" data-ar="هدايا الشركات للعملاء والموظفين">Corporate gifting for teams and clients</div>
+    <div class="feature" data-en="Customized products for your brand" data-ar="منتجات مخصصة لهوية شركتك">Customized products for your brand</div>
+    <div class="feature" data-en="Printing solutions for business needs" data-ar="حلول طباعة لاحتياجات شركتك">Printing solutions for business needs</div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <h2 style="color:white">NAOMI</h2>
+  <p data-en="Your Corporate Gifting & Printing Partner" data-ar="شريكك في هدايا الشركات وحلول الطباعة">Your Corporate Gifting & Printing Partner</p>
+  <p>Email: <a href="mailto:naomi.co.eg@gmail.com">naomi.co.eg@gmail.com</a></p>
+  <p>WhatsApp: <a href="https://wa.me/201090368301">+20 109 036 8301</a></p>
+  <p>© NAOMI</p>
+</footer>
+
+<script>
+const productsData = [
+ {id:1,category:"sets",icon:"🎁",en:"Premium Gift Set",ar:"مجموعة هدايا فاخرة",descEn:"A thoughtful set for clients and teams.",descAr:"مجموعة مميزة للعملاء وفريق العمل"},
+ {id:2,category:"sets",icon:"📦",en:"Essential Gift Set",ar:"مجموعة الهدايا الأساسية",descEn:"Practical essentials in one set.",descAr:"منتجات عملية في مجموعة واحدة"},
+ {id:3,category:"notebooks",icon:"📓",en:"Corporate Notebook",ar:"نوت بوك للشركات",descEn:"Customizable notebook for everyday use.",descAr:"نوت بوك قابل للتخصيص للاستخدام اليومي"},
+ {id:4,category:"notebooks",icon:"📔",en:"Premium Notebook",ar:"نوت بوك فاخر",descEn:"An elegant notebook for meetings.",descAr:"نوت بوك أنيق للاجتماعات"},
+ {id:5,category:"pens",icon:"🖊️",en:"Branded Pen",ar:"قلم مخصص",descEn:"A practical corporate giveaway.",descAr:"هدية عملية تحمل هوية شركتك"},
+ {id:6,category:"mugs",icon:"☕",en:"Corporate Mug",ar:"مجّ للشركات",descEn:"A mug for the office or an event.",descAr:"مجّ للمكتب أو الفعاليات"},
+ {id:7,category:"electronics",icon:"🔌",en:"Charging Cable",ar:"كابل شحن",descEn:"A useful everyday tech accessory.",descAr:"إكسسوار تقني عملي للاستخدام اليومي"},
+ {id:8,category:"electronics",icon:"💾",en:"Flash Drive",ar:"فلاش ميموري",descEn:"A compact corporate tech gift.",descAr:"هدية تقنية صغيرة وعملية"}
+];
+let lang="en",filter="all",selection={};
+const productsEl=document.getElementById("products");
+function renderProducts(){
+ productsEl.innerHTML=productsData.filter(p=>filter==="all"||p.category===filter).map(p=>`
+ <article class="product">
+ <div class="product-visual" aria-hidden="true">${p.icon}</div>
+ <h3>${p[lang]}</h3><p>${lang==="en"?p.descEn:p.descAr}</p>
+ <label>${lang==="en"?"Quantity":"الكمية"}</label>
+ <select id="qty-${p.id}">${[1,5,10,20,50,100].map(n=>`<option value="${n}">${n}</option>`).join("")}</select>
+ <button onclick="addProduct(${p.id})">${lang==="en"?"Add to My Selection":"إضافة لاختياراتي"}</button>
+ </article>`).join("");
+ document.querySelectorAll("#filters button").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));
+}
+function addProduct(id){
+ const p=productsData.find(x=>x.id===id);
+ const qty=Number(document.getElementById("qty-"+id).value);
+ selection[id]=(selection[id]||0)+qty;
+ renderSelection();
+ document.getElementById("my-selection").scrollIntoView({behavior:"smooth"});
+}
+function renderSelection(){
+ const el=document.getElementById("selectionItems");
+ const ids=Object.keys(selection);
+ if(!ids.length){el.innerHTML=`<p>${lang==="en"?"No products selected yet.":"لم تختاري أي منتجات حتى الآن"}</p>`;return;}
+ el.innerHTML=ids.map(id=>{const p=productsData.find(x=>x.id===Number(id));return `<div class="selection-item"><span>${p[lang]} × ${selection[id]}</span><button onclick="removeProduct(${id})">${lang==="en"?"Remove":"حذف"}</button></div>`}).join("");
+}
+function removeProduct(id){delete selection[id];renderSelection()}
+function sendWhatsApp(){
+ const ids=Object.keys(selection);
+ if(!ids.length){alert(lang==="en"?"Please select at least one product first.":"من فضلك اختاري منتج واحد على الأقل");return;}
+ let msg=lang==="en"?"Hello NAOMI, I would like to request a quotation for:\n":"مرحبًا NAOMI، أريد طلب عرض سعر للمنتجات التالية:\n";
+ ids.forEach(id=>{const p=productsData.find(x=>x.id===Number(id));msg+=`- ${p[lang]} x ${selection[id]}\n`;});
+ const note=document.getElementById("customerNote").value.trim();
+ if(note)msg+=(lang==="en"?"Notes: ":"ملاحظات: ")+note;
+ window.open("https://wa.me/201090368301?text="+encodeURIComponent(msg),"_blank");
+}
+function toggleLanguage(){
+ lang=lang==="en"?"ar":"en";
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.getElementById("languageButton").textContent=lang==="en"?"العربية":"English";
+ document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
+ document.getElementById("customerNote").placeholder=lang==="en"?"Tell us about your requirements...":"اكتبي تفاصيل طلبك هنا...";
+ renderProducts();renderSelection();
+}
+document.querySelectorAll("#filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;renderProducts()}));
+renderProducts();
+</script>
+</body>
+</html>
