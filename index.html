@@ -650,49 +650,71 @@ footer {
     </div>
 
   </div>
-</footer>
 
-<footer style="background:#F1EDE4; color:#013125; padding:40px 20px;">
-  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;">
+<footer style="background:#FFFFFF; color:#013125; padding:40px 6%; border-top:1px solid #E5EBE7;">
+  <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; align-items:start;">
 
-    <div style="min-width:220px;">
-      <a href="#home">
+    <div>
+      <a href="#home" style="display:inline-block;">
         <img src="download.png" alt="NAOMI Logo"
-             style="width:150px; height:auto; display:block; margin-bottom:15px;">
+             style="width:145px; max-width:100%; height:auto; display:block;">
       </a>
-      <p>Your Corporate Gifting &amp; Printing Partner</p>
-    </div>
-
-    <div style="min-width:180px;">
-      <h3>Quick Links</h3>
-      <p><a href="#home">Home</a></p>
-      <p><a href="#gifts">Corporate Giveaways</a></p>
-      <p><a href="#printing">Printing Solutions</a></p>
-      <p><a href="#projects">Projects</a></p>
-      <p><a href="#about">About Us</a></p>
-      <p><a href="#catalogs">Catalogs</a></p>
-    </div>
-
-    <div style="min-width:220px;">
-      <h3>Contact Us</h3>
-      <p>
-        <a href="mailto:naomi.co.eg@gmail.com">
-          ✉ naomi.co.eg@gmail.com
-        </a>
+      <p style="font-size:14px; line-height:1.8; margin:14px 0 0; color:#52665D;">
+        Your Corporate Gifting &amp; Printing Partner
       </p>
-      <p>
-        <a href="https://www.instagram.com/naomi.eg_/" target="_blank">
+    </div>
+
+    <div>
+      <h3 style="font-size:16px; margin:5px 0 18px; color:#013125;">
+        Quick Links
+      </h3>
+      <div style="display:grid; gap:11px;">
+        <a href="#home" style="color:#52665D; text-decoration:none;">Home</a>
+        <a href="#gifts" style="color:#52665D; text-decoration:none;">Corporate Giveaways</a>
+        <a href="#printing" style="color:#52665D; text-decoration:none;">Printing Solutions</a>
+        <a href="#projects" style="color:#52665D; text-decoration:none;">Projects</a>
+        <a href="#about" style="color:#52665D; text-decoration:none;">About Us</a>
+        <a href="#catalogs" style="color:#52665D; text-decoration:none;">Catalogs</a>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:16px; margin:5px 0 18px; color:#013125;">
+        Contact Us
+      </h3>
+      <a href="mailto:naomi.co.eg@gmail.com"
+         style="display:block; color:#52665D; text-decoration:none; margin-bottom:18px; overflow-wrap:anywhere;">
+        ✉ naomi.co.eg@gmail.com
+      </a>
+
+      <div style="display:flex; gap:18px; align-items:center;">
+        <a href="https://www.instagram.com/naomi.eg_/"
+           target="_blank" rel="noopener noreferrer"
+           style="color:#013125; text-decoration:none;">
           Instagram
         </a>
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/company/108610549/" target="_blank">
+        <a href="https://www.linkedin.com/company/108610549/"
+           target="_blank" rel="noopener noreferrer"
+           style="color:#013125; text-decoration:none;">
           LinkedIn
         </a>
-      </p>
+      </div>
     </div>
 
   </div>
+
+  <div style="max-width:1200px; margin:30px auto 0; padding-top:18px; border-top:1px solid #E5EBE7; text-align:center; color:#829087; font-size:12px;">
+    © NAOMI. All rights reserved.
+  </div>
+
+  <style>
+    @media (max-width:700px) {
+      footer > div:first-child {
+        grid-template-columns:1fr !important;
+        gap:28px !important;
+      }
+    }
+  </style>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
