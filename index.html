@@ -3,195 +3,471 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NAOMI | Corporate Gifts & Printing</title>
 <style>
-:root{--green:#013125;--mid:#1b5e4b;--ivory:#f1ede4;--gold:#c8a35a}
+:root{--g:#013125;--m:#1b5e4b;--iv:#f1ede4;--gold:#c8a35a}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:var(--green);background:#fff}
-button,a{cursor:pointer}
-button{font:inherit}
-header{background:var(--green);color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-.logo{font-size:28px;letter-spacing:5px;font-weight:bold}
-nav{display:flex;gap:18px;flex-wrap:wrap}
+body{margin:0;font-family:Arial,sans-serif;color:var(--g)}
+header{background:var(--g);color:white;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:27px;letter-spacing:5px;font-weight:bold;color:white;text-decoration:none}
+nav{display:flex;gap:14px;flex-wrap:wrap}
 nav a{color:white;text-decoration:none;font-size:14px}
-.lang{background:var(--ivory);color:var(--green);border:0;padding:10px 14px;border-radius:4px}
-.hero{padding:85px 7%;background:linear-gradient(120deg,#013125,#1b5e4b);color:white}
-.hero small{letter-spacing:3px;color:#c8d9cf}
-.hero h1{font-size:clamp(36px,6vw,66px);max-width:750px;line-height:1.12;margin:22px 0}
-.hero p{max-width:580px;line-height:1.8;color:#e1ebe5}
-.btn{display:inline-block;background:var(--gold);color:#102f24;padding:14px 22px;border:0;border-radius:3px;text-decoration:none;font-weight:bold;margin:10px 8px 0 0}
-.btn.outline{background:transparent;border:1px solid white;color:white}
-section{padding:60px 7%}
-.eyebrow{color:var(--mid);letter-spacing:2px;font-size:12px;font-weight:bold}
-h2{font-size:clamp(27px,4vw,40px);margin:12px 0}
-.intro{max-width:650px;line-height:1.8;color:#5c6b64}
-.categories,.products,.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:30px}
-.category{background:var(--ivory);padding:26px 20px;min-height:130px}
-.category h3{margin-top:0}
-.category p,.product p{color:#66746d;line-height:1.6;font-size:14px}
-.products{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.product{border:1px solid #e6eae7;padding:14px;display:flex;flex-direction:column}
-.product-visual{height:155px;background:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:46px}
-.product h3{margin-bottom:4px}
-.product button{margin-top:auto;background:var(--green);color:white;border:0;padding:12px}
-.product select{padding:8px;margin-bottom:10px;border:1px solid #ddd}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
-.filters button{background:white;color:var(--green);border:1px solid var(--green);padding:9px 13px}
-.filters button.active{background:var(--green);color:white}
-.selection{background:var(--ivory)}
-.selection-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #d5ddd7}
-.selection-item button{border:0;background:none;color:#a33}
-.note{width:100%;min-height:90px;padding:12px;border:1px solid #ccd5cf;font:inherit;margin:15px 0}
-.feature{padding:22px;border-left:3px solid var(--gold);background:#fafaf8}
-footer{background:var(--green);color:white;padding:35px 7%;line-height:1.9}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.lang,.secondary{padding:10px 14px;border:1px solid var(--g);background:white;color:var(--g)}
+.hero{padding:75px 7%;background:linear-gradient(120deg,var(--g),var(--m));color:white}
+.hero h1{font-size:clamp(36px,6vw,64px);max-width:750px;line-height:1.15}
+.hero p,.intro{line-height:1.8;max-width:700px}
+.hero p{color:#e1ebe5}
+.btn{background:var(--gold);color:var(--g);border:0;padding:13px 18px;font-weight:bold;display:inline-block;text-decoration:none;margin:6px 4px 6px 0}
+section{padding:52px 7%}
+.eyebrow{color:var(--m);letter-spacing:2px;font-size:12px;font-weight:bold}
+h2{font-size:clamp(26px,4vw,38px)}
+.intro{color:#617067}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:24px}
+.category,.product,.panel{border:1px solid #e1e7e2;padding:17px;background:white}
+.category{background:var(--iv)}
+.product{display:flex;flex-direction:column;min-width:0}
+.product img{width:100%;height:190px;object-fit:contain;background:#fafaf8}
+.visual{height:150px;display:grid;place-items:center;background:var(--iv);font-size:50px}
+.product p{color:#647168;line-height:1.6;font-size:14px}
+.product select{padding:9px;margin:7px 0}
+.product button,.primary{background:var(--g);color:white;border:0;padding:12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.filters button{padding:9px 13px;background:white;border:1px solid var(--g);color:var(--g)}
+.filters button.active{background:var(--g);color:white}
+.selection{background:var(--iv)}
+.selection-item{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #d5ddd7}
+.selection-item button{border:0;color:#a33;background:none}
+.note,.field{width:100%;padding:11px;border:1px solid #ccd5cf;margin:7px 0 14px}
+.note{min-height:90px}
+.feature{padding:20px;border-left:3px solid var(--gold);background:#fafaf8}
+footer{background:var(--g);color:white;padding:35px 7%;line-height:1.9}
 footer a{color:white}
+#adminView{background:#f7f8f6;min-height:70vh}
+.admin-nav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.admin-nav button{padding:10px;border:1px solid var(--g);background:white;color:var(--g)}
+.admin-nav button.active{background:var(--g);color:white}
+.admin-form{max-width:800px;background:white;border:1px solid #e1e7e2;padding:20px;margin:18px 0}
+.admin-form label{display:block;font-weight:bold;margin-top:8px}
+.admin-form input,.admin-form textarea,.admin-form select{width:100%;padding:10px;border:1px solid #ccd5cf;margin:5px 0 12px}
+.admin-list-item{padding:12px 0;border-bottom:1px solid #ddd;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.admin-list-item img{width:55px;height:55px;object-fit:cover}
+.status{padding:12px;background:var(--iv);margin:12px 0;white-space:pre-wrap}
+.danger{background:#a32929;color:white;border:0;padding:9px}
 [hidden]{display:none!important}
-@media(max-width:600px){header{padding:16px 5%}.hero{padding:60px 6%}section{padding:45px 6%}.logo{font-size:23px}nav{gap:12px}}
+@media(max-width:600px){header{padding:16px 5%}section{padding:38px 5%}.hero{padding:48px 6%}nav{gap:10px}}
 </style>
 </head>
 <body>
 <header>
-  <a href="#home" class="logo" style="color:white;text-decoration:none">NAOMI</a>
-  <nav>
-    <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
-    <a href="#gifts" data-en="Corporate Gifts" data-ar="الهدايا للشركات">Corporate Gifts</a>
-    <a href="#printing" data-en="Printing" data-ar="الطباعة">Printing</a>
-    <a href="#about" data-en="About" data-ar="من نحن">About</a>
-    <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
-  </nav>
-  <button class="lang" id="languageButton" onclick="toggleLanguage()">العربية</button>
+<a class="logo" href="#home">NAOMI</a>
+<nav id="mainNav">
+<a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+<a href="#gifts" data-en="Corporate Giveaways" data-ar="هدايا الشركات">Corporate Giveaways</a>
+<a href="#printing" data-en="Printing" data-ar="الطباعة">Printing</a>
+<a href="#projects" data-en="Projects" data-ar="مشروعاتنا">Projects</a>
+<a href="#about" data-en="About" data-ar="من نحن">About</a>
+<a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+<a href="#admin" id="adminLink">Admin</a>
+</nav>
+<button class="lang" id="languageButton" onclick="toggleLanguage()">العربية</button>
 </header>
 
-<main>
+<main id="publicView">
 <section class="hero" id="home">
-  <small data-en="CORPORATE GIFTING & PRINTING SOLUTIONS" data-ar="هدايا الشركات وحلول الطباعة">CORPORATE GIFTING & PRINTING SOLUTIONS</small>
-  <h1 data-en="Your Creative Partner, Not Just a Vendor" data-ar="شريكك في الإبداع مش مجرد مورد">Your Creative Partner, Not Just a Vendor</h1>
-  <p data-en="Thoughtful corporate gifts and professional printing solutions that help businesses represent their brands and build stronger relationships." data-ar="هدايا مخصصة للشركات وحلول طباعة احترافية تساعدك على التعبير عن هوية شركتك وبناء علاقات أقوى مع عملائك وفريقك">Thoughtful corporate gifts and professional printing solutions that help businesses represent their brands and build stronger relationships.</p>
-  <a class="btn" href="#gifts" data-en="Explore Our Products" data-ar="اكتشفي منتجاتنا">Explore Our Products</a>
-  <a class="btn outline" href="#contact" data-en="Request a Quote" data-ar="اطلبي عرض سعر">Request a Quote</a>
+<div data-en="CORPORATE GIFTING & PRINTING SOLUTIONS" data-ar="هدايا الشركات وحلول الطباعة">CORPORATE GIFTING & PRINTING SOLUTIONS</div>
+<h1 data-en="Your Creative Partner, Not Just a Vendor" data-ar="شريكك في الإبداع مش مجرد مورد">Your Creative Partner, Not Just a Vendor</h1>
+<p data-en="Thoughtful corporate gifts and professional printing solutions that help businesses represent their brands and build stronger relationships." data-ar="هدايا مخصصة وحلول طباعة احترافية تساعد الشركات على التعبير عن هويتها وبناء علاقات أقوى">Thoughtful corporate gifts and professional printing solutions that help businesses represent their brands and build stronger relationships.</p>
+<a class="btn" href="#gifts" data-en="Explore Products" data-ar="اكتشفي المنتجات">Explore Products</a>
+<a class="btn" href="#contact" data-en="Request a Quote" data-ar="اطلبي عرض سعر">Request a Quote</a>
 </section>
 
 <section id="gifts">
-  <div class="eyebrow" data-en="WHAT WE OFFER" data-ar="خدماتنا">WHAT WE OFFER</div>
-  <h2 data-en="Corporate Giveaways & Gifts" data-ar="هدايا الشركات والهدايا المخصصة">Corporate Giveaways & Gifts</h2>
-  <p class="intro" data-en="From everyday essentials to premium gift sets, find options that fit your team, clients and corporate events." data-ar="من المنتجات اليومية إلى مجموعات الهدايا المميزة اختاري ما يناسب فريقك وعملاءك وفعاليات شركتك">From everyday essentials to premium gift sets, find options that fit your team, clients and corporate events.</p>
-  <div class="categories">
-    <div class="category"><h3>CLASS A</h3><p data-en="Premium corporate gift sets" data-ar="مجموعات هدايا شركات فاخرة">Premium corporate gift sets</p></div>
-    <div class="category"><h3>CLASS B</h3><p data-en="Practical and elegant gift sets" data-ar="مجموعات هدايا عملية وأنيقة">Practical and elegant gift sets</p></div>
-    <div class="category"><h3>CLASS C</h3><p data-en="Everyday corporate essentials" data-ar="هدايا عملية للاستخدام اليومي">Everyday corporate essentials</p></div>
-  </div>
-  <div class="filters" id="filters">
-    <button class="active" data-filter="all" data-en="All Products" data-ar="كل المنتجات">All Products</button>
-    <button data-filter="sets" data-en="Gift Sets" data-ar="مجموعات الهدايا">Gift Sets</button>
-    <button data-filter="notebooks" data-en="Notebooks" data-ar="نوت بوك">Notebooks</button>
-    <button data-filter="pens" data-en="Pens" data-ar="أقلام">Pens</button>
-    <button data-filter="mugs" data-en="Mugs" data-ar="مجّات">Mugs</button>
-    <button data-filter="electronics" data-en="Electronics" data-ar="إلكترونيات">Electronics</button>
-  </div>
-  <div class="products" id="products"></div>
+<div class="eyebrow" data-en="WHAT WE OFFER" data-ar="خدماتنا">WHAT WE OFFER</div>
+<h2 data-en="Corporate Giveaways & Custom Gifts" data-ar="هدايا الشركات والهدايا المخصصة">Corporate Giveaways & Custom Gifts</h2>
+<p class="intro" data-en="Explore corporate gifts for clients, teams and business events. Select your products and request a quotation." data-ar="اكتشفي هدايا الشركات للعملاء والموظفين والفعاليات واختاري المنتجات لطلب عرض سعر">Explore corporate gifts for clients, teams and business events.</p>
+<div class="grid" id="categories"></div>
+<div class="filters" id="filters"></div>
+<div id="products" class="grid"></div>
+<div id="loadingProducts" class="status">Loading products...</div>
 </section>
 
 <section id="printing" style="background:#fafaf8">
-  <div class="eyebrow" data-en="BRANDED MATERIALS" data-ar="مطبوعات تحمل هوية شركتك">BRANDED MATERIALS</div>
-  <h2 data-en="Printing Solutions" data-ar="حلول الطباعة">Printing Solutions</h2>
-  <p class="intro" data-en="Professional printing for your business communications, events and everyday office needs." data-ar="حلول طباعة احترافية لمراسلات شركتك وفعالياتها واحتياجات المكتب اليومية">Professional printing for your business communications, events and everyday office needs.</p>
-  <div class="categories">
-    <div class="category"><h3 data-en="Business Cards" data-ar="كروت شخصية">Business Cards</h3></div>
-    <div class="category"><h3 data-en="Brochures & Flyers" data-ar="بروشورات وفلايرز">Brochures & Flyers</h3></div>
-    <div class="category"><h3 data-en="Folders & Notepads" data-ar="فولدرات ونوت باد">Folders & Notepads</h3></div>
-    <div class="category"><h3 data-en="Custom Printing" data-ar="مطبوعات مخصصة">Custom Printing</h3></div>
-  </div>
+<div class="eyebrow" data-en="BRANDED MATERIALS" data-ar="مطبوعات تحمل هوية شركتك">BRANDED MATERIALS</div>
+<h2 data-en="Printing Solutions" data-ar="حلول الطباعة">Printing Solutions</h2>
+<p class="intro" data-en="Printing for business communications, events and everyday office needs." data-ar="حلول طباعة لمراسلات شركتك وفعالياتها واحتياجات المكتب اليومية">Printing for business communications, events and everyday office needs.</p>
+<div class="grid">
+<div class="category"><h3 data-en="Business Cards" data-ar="كروت شخصية">Business Cards</h3></div>
+<div class="category"><h3 data-en="Brochures & Flyers" data-ar="بروشورات وفلايرز">Brochures & Flyers</h3></div>
+<div class="category"><h3 data-en="Folders & Notepads" data-ar="فولدرات ونوت باد">Folders & Notepads</h3></div>
+<div class="category"><h3 data-en="Custom Printing" data-ar="مطبوعات مخصصة">Custom Printing</h3></div>
+</div>
+</section>
+
+<section id="projects">
+<div class="eyebrow" data-en="SELECTED WORK" data-ar="من أعمالنا">SELECTED WORK</div>
+<h2 data-en="Projects" data-ar="مشروعاتنا">Projects</h2>
+<div id="projectsGrid" class="grid"></div>
 </section>
 
 <section class="selection" id="my-selection">
-  <div class="eyebrow" data-en="YOUR REQUEST" data-ar="طلبك">YOUR REQUEST</div>
-  <h2 data-en="My Selection" data-ar="اختياراتي">My Selection</h2>
-  <p class="intro" data-en="Choose the products you are interested in and send us one quotation request." data-ar="اختاري المنتجات اللي محتاجاها وابعتي لنا طلب عرض سعر واحد">Choose the products you are interested in and send us one quotation request.</p>
-  <div id="selectionItems"><p data-en="No products selected yet." data-ar="لم تختاري أي منتجات حتى الآن">No products selected yet.</p></div>
-  <label for="customerNote" data-en="General note (optional)" data-ar="ملاحظات عامة (اختياري)">General note (optional)</label>
-  <textarea class="note" id="customerNote" placeholder="Tell us about your requirements..."></textarea>
-  <button class="btn" onclick="sendWhatsApp()" data-en="Send Request via WhatsApp" data-ar="إرسال الطلب عبر واتساب">Send Request via WhatsApp</button>
+<div class="eyebrow" data-en="YOUR REQUEST" data-ar="طلبك">YOUR REQUEST</div>
+<h2 data-en="My Selection" data-ar="اختياراتي">My Selection</h2>
+<p class="intro" data-en="Select products and send one quotation request." data-ar="اختاري المنتجات وابعتي طلب عرض سعر واحد">Select products and send one quotation request.</p>
+<div id="selectionItems"></div>
+<label for="customerNote" data-en="General note (optional)" data-ar="ملاحظات عامة (اختياري)">General note (optional)</label>
+<textarea class="note" id="customerNote" placeholder="Tell us about your requirements..."></textarea>
+<button class="btn" onclick="sendWhatsApp()" data-en="Send Request via WhatsApp" data-ar="إرسال الطلب عبر واتساب">Send Request via WhatsApp</button>
 </section>
 
 <section id="about">
-  <div class="eyebrow" data-en="ABOUT NAOMI" data-ar="عن NAOMI">ABOUT NAOMI</div>
-  <h2 data-en="Details Make the Difference" data-ar="التفاصيل هي اللي بتصنع الفرق">Details Make the Difference</h2>
-  <p class="intro" data-en="NAOMI is a B2B partner for corporate giveaways, customized gifts and printing solutions. We help businesses appreciate clients, recognize teams and represent their brands through carefully selected products." data-ar="NAOMI شريك للشركات في الهدايا المخصصة وحلول الطباعة بنساعد الشركات تقدر عملاءها وتحتفل بفريقها وتعبر عن هويتها من خلال منتجات يتم اختيارها بعناية">NAOMI is a B2B partner for corporate giveaways, customized gifts and printing solutions. We help businesses appreciate clients, recognize teams and represent their brands through carefully selected products.</p>
-  <div class="features">
-    <div class="feature" data-en="Corporate gifting for teams and clients" data-ar="هدايا الشركات للعملاء والموظفين">Corporate gifting for teams and clients</div>
-    <div class="feature" data-en="Customized products for your brand" data-ar="منتجات مخصصة لهوية شركتك">Customized products for your brand</div>
-    <div class="feature" data-en="Printing solutions for business needs" data-ar="حلول طباعة لاحتياجات شركتك">Printing solutions for business needs</div>
-  </div>
+<div class="eyebrow" data-en="ABOUT NAOMI" data-ar="عن NAOMI">ABOUT NAOMI</div>
+<h2 data-en="Details Make the Difference" data-ar="التفاصيل هي اللي بتصنع الفرق">Details Make the Difference</h2>
+<p class="intro" data-en="NAOMI is a B2B partner for corporate giveaways, customized gifts and printing solutions. We help businesses appreciate clients, recognize teams and represent their brands." data-ar="NAOMI شريك للشركات في الهدايا المخصصة وحلول الطباعة. بنساعد الشركات تقدر عملاءها وفريقها وتعبر عن هويتها">NAOMI is a B2B partner for corporate giveaways, customized gifts and printing solutions.</p>
+<div class="grid">
+<div class="feature" data-en="Corporate gifting for teams and clients" data-ar="هدايا الشركات للعملاء والموظفين">Corporate gifting for teams and clients</div>
+<div class="feature" data-en="Customized products for your brand" data-ar="منتجات مخصصة لهوية شركتك">Customized products for your brand</div>
+<div class="feature" data-en="Printing solutions for business needs" data-ar="حلول طباعة لاحتياجات شركتك">Printing solutions for business needs</div>
+</div>
+</section>
+
+<section id="catalogs">
+<div class="eyebrow" data-en="DOWNLOADS" data-ar="الكتالوجات">DOWNLOADS</div>
+<h2 data-en="PDF Catalogs" data-ar="كتالوجات PDF">PDF Catalogs</h2>
+<div id="catalogsGrid" class="grid"></div>
 </section>
 </main>
 
+<section id="adminView" hidden>
+<div class="eyebrow">NAOMI MANAGEMENT</div>
+<h2>Admin Dashboard</h2>
+<div id="authPanel" class="admin-form">
+<h3>Admin Login</h3>
+<p>Sign in with your admin email and Supabase password</p>
+<label>Email</label><input id="loginEmail" type="email" autocomplete="username">
+<label>Password</label><input id="loginPassword" type="password" autocomplete="current-password">
+<button class="primary" onclick="login()">Sign In</button>
+<div id="loginStatus" class="status"></div>
+</div>
+<div id="dashboard" hidden>
+<p id="adminWelcome"></p>
+<button class="secondary" onclick="logout()">Sign Out</button>
+<div class="admin-nav">
+<button onclick="showTab('productsTab',this)" class="active">Products</button>
+<button onclick="showTab('categoriesTab',this)">Categories</button>
+<button onclick="showTab('projectsTab',this)">Projects</button>
+<button onclick="showTab('catalogsTab',this)">PDF Catalogs</button>
+</div>
+<div id="adminStatus" class="status"></div>
+
+<div id="productsTab">
+<h3>Manage Products</h3>
+<form class="admin-form" id="productForm">
+<h3 id="productFormTitle">Add Product</h3>
+<input type="hidden" id="productId">
+<label>Name in English *</label><input id="productEn" required>
+<label>Name in Arabic *</label><input id="productAr" required>
+<label>Category</label><select id="productCategory"></select>
+<label>Description in English</label><textarea id="descEn"></textarea>
+<label>Description in Arabic</label><textarea id="descAr"></textarea>
+<label>Product image (optional)</label><input type="file" id="productImage" accept="image/png,image/jpeg,image/webp">
+<label>Display order</label><input id="productOrder" type="number" value="0">
+<label><input id="productPublished" type="checkbox" checked style="width:auto"> Published on website</label>
+<button class="primary" type="submit">Save Product</button>
+<button class="secondary" type="button" onclick="resetProductForm()">Clear</button>
+</form>
+<div id="adminProducts"></div>
+</div>
+
+<div id="categoriesTab" hidden>
+<h3>Manage Categories</h3>
+<form class="admin-form" id="categoryForm">
+<input type="hidden" id="categoryId">
+<label>Category name in English *</label><input id="categoryEn" required>
+<label>Category name in Arabic *</label><input id="categoryAr" required>
+<label>Display order</label><input id="categoryOrder" type="number" value="0">
+<label><input type="checkbox" id="categoryVisible" checked style="width:auto"> Visible on website</label>
+<button class="primary" type="submit">Save Category</button>
+<button class="secondary" type="button" onclick="resetCategoryForm()">Clear</button>
+</form>
+<div id="adminCategories"></div>
+</div>
+
+<div id="projectsTab" hidden>
+<h3>Manage Projects</h3>
+<form class="admin-form" id="projectForm">
+<input type="hidden" id="projectId">
+<label>Project title in English *</label><input id="projectEn" required>
+<label>Project title in Arabic *</label><input id="projectAr" required>
+<label>Description in English</label><textarea id="projectDescEn"></textarea>
+<label>Description in Arabic</label><textarea id="projectDescAr"></textarea>
+<label>Project image</label><input type="file" id="projectImage" accept="image/png,image/jpeg,image/webp">
+<label>Display order</label><input id="projectOrder" type="number" value="0">
+<label><input id="projectPublished" type="checkbox" checked style="width:auto"> Published</label>
+<button class="primary" type="submit">Save Project</button>
+<button class="secondary" type="button" onclick="resetProjectForm()">Clear</button>
+</form>
+<div id="adminProjects"></div>
+</div>
+
+<div id="catalogsTab" hidden>
+<h3>Manage PDF Catalogs</h3>
+<form class="admin-form" id="catalogForm">
+<input type="hidden" id="catalogId">
+<label>Catalog title in English *</label><input id="catalogEn" required>
+<label>Catalog title in Arabic *</label><input id="catalogAr" required>
+<label>PDF file *</label><input type="file" id="catalogFile" accept="application/pdf">
+<label><input id="catalogPublished" type="checkbox" checked style="width:auto"> Published</label>
+<button class="primary" type="submit">Save Catalog</button>
+<button class="secondary" type="button" onclick="resetCatalogForm()">Clear</button>
+</form>
+<div id="adminCatalogs"></div>
+</div>
+</div>
+</section>
+
 <footer id="contact">
-  <h2 style="color:white">NAOMI</h2>
-  <p data-en="Your Corporate Gifting & Printing Partner" data-ar="شريكك في هدايا الشركات وحلول الطباعة">Your Corporate Gifting & Printing Partner</p>
-  <p>Email: <a href="mailto:naomi.co.eg@gmail.com">naomi.co.eg@gmail.com</a></p>
-  <p>WhatsApp: <a href="https://wa.me/201090368301">+20 109 036 8301</a></p>
-  <p>© NAOMI</p>
+<h2 style="color:white">NAOMI</h2>
+<p data-en="Your Corporate Gifting & Printing Partner" data-ar="شريكك في هدايا الشركات وحلول الطباعة">Your Corporate Gifting & Printing Partner</p>
+<p>Email: <a href="mailto:naomi.co.eg@gmail.com">naomi.co.eg@gmail.com</a></p>
+<p>WhatsApp: <a href="https://wa.me/201090368301">+20 109 036 8301</a></p>
+<p>© NAOMI</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const productsData = [
- {id:1,category:"sets",icon:"🎁",en:"Premium Gift Set",ar:"مجموعة هدايا فاخرة",descEn:"A thoughtful set for clients and teams.",descAr:"مجموعة مميزة للعملاء وفريق العمل"},
- {id:2,category:"sets",icon:"📦",en:"Essential Gift Set",ar:"مجموعة الهدايا الأساسية",descEn:"Practical essentials in one set.",descAr:"منتجات عملية في مجموعة واحدة"},
- {id:3,category:"notebooks",icon:"📓",en:"Corporate Notebook",ar:"نوت بوك للشركات",descEn:"Customizable notebook for everyday use.",descAr:"نوت بوك قابل للتخصيص للاستخدام اليومي"},
- {id:4,category:"notebooks",icon:"📔",en:"Premium Notebook",ar:"نوت بوك فاخر",descEn:"An elegant notebook for meetings.",descAr:"نوت بوك أنيق للاجتماعات"},
- {id:5,category:"pens",icon:"🖊️",en:"Branded Pen",ar:"قلم مخصص",descEn:"A practical corporate giveaway.",descAr:"هدية عملية تحمل هوية شركتك"},
- {id:6,category:"mugs",icon:"☕",en:"Corporate Mug",ar:"مجّ للشركات",descEn:"A mug for the office or an event.",descAr:"مجّ للمكتب أو الفعاليات"},
- {id:7,category:"electronics",icon:"🔌",en:"Charging Cable",ar:"كابل شحن",descEn:"A useful everyday tech accessory.",descAr:"إكسسوار تقني عملي للاستخدام اليومي"},
- {id:8,category:"electronics",icon:"💾",en:"Flash Drive",ar:"فلاش ميموري",descEn:"A compact corporate tech gift.",descAr:"هدية تقنية صغيرة وعملية"}
-];
-let lang="en",filter="all",selection={};
-const productsEl=document.getElementById("products");
-function renderProducts(){
- productsEl.innerHTML=productsData.filter(p=>filter==="all"||p.category===filter).map(p=>`
- <article class="product">
- <div class="product-visual" aria-hidden="true">${p.icon}</div>
- <h3>${p[lang]}</h3><p>${lang==="en"?p.descEn:p.descAr}</p>
- <label>${lang==="en"?"Quantity":"الكمية"}</label>
- <select id="qty-${p.id}">${[1,5,10,20,50,100].map(n=>`<option value="${n}">${n}</option>`).join("")}</select>
- <button onclick="addProduct(${p.id})">${lang==="en"?"Add to My Selection":"إضافة لاختياراتي"}</button>
- </article>`).join("");
- document.querySelectorAll("#filters button").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));
+// Paste your Supabase project URL and PUBLISHABLE key below.
+// Never put your Supabase secret/service_role key in this file.
+const SUPABASE_URL = "https://cpswkymfurgxbikevfra.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_Nt1-E-R819yo_ng232m2fg_5fCh1V2_";
+const ADMIN_EMAIL = "neamamohamed0115@gmail.com";
+const sb = window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+
+let lang="en", filter="all", selection={};
+let productsData=[], categoriesData=[], projectsData=[], catalogsData=[];
+
+function esc(v=""){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function say(msg){document.getElementById("adminStatus").textContent=msg;}
+function tr(en,ar){return lang==="en"?(en||""):(ar||en||"");}
+function fileExt(file){return file.name.split(".").pop().toLowerCase().replace(/[^a-z0-9]/g,"");}
+function slug(){return Math.random().toString(36).slice(2,10)+"-"+Date.now();}
+
+async function uploadFile(file,folder){
+ if(!file)return null;
+ if(file.size>10*1024*1024)throw new Error("File must be smaller than 10 MB");
+ const allowed=folder==="catalogs"?["application/pdf"]:["image/jpeg","image/png","image/webp"];
+ if(!allowed.includes(file.type))throw new Error("Unsupported file type");
+ const path=folder+"/"+slug()+"."+fileExt(file);
+ const {error}=await sb.storage.from("naomi-assets").upload(path,file,{upsert:false,contentType:file.type});
+ if(error)throw error;
+ return sb.storage.from("naomi-assets").getPublicUrl(path).data.publicUrl;
 }
-function addProduct(id){
- const p=productsData.find(x=>x.id===id);
- const qty=Number(document.getElementById("qty-"+id).value);
- selection[id]=(selection[id]||0)+qty;
- renderSelection();
- document.getElementById("my-selection").scrollIntoView({behavior:"smooth"});
+
+async function loadPublic(){
+ const [c,p,pr,ca]=await Promise.all([
+  sb.from("categories").select("*").eq("is_visible",true).order("sort_order"),
+  sb.from("products").select("*").eq("is_published",true).order("sort_order"),
+  sb.from("projects").select("*").eq("is_published",true).order("sort_order"),
+  sb.from("catalogs").select("*").eq("is_published",true).order("created_at",{ascending:false})
+ ]);
+ if(c.error||p.error||pr.error||ca.error){
+  document.getElementById("loadingProducts").textContent="Could not load products. Please check the Supabase setup.";
+  console.error(c.error,p.error,pr.error,ca.error);return;
+ }
+ categoriesData=c.data||[];productsData=p.data||[];projectsData=pr.data||[];catalogsData=ca.data||[];
+ renderCategories();renderFilters();renderProducts();renderProjects();renderCatalogs();
+ document.getElementById("loadingProducts").hidden=true;
+}
+
+function renderCategories(){
+ document.getElementById("categories").innerHTML=categoriesData.map(c=>`<div class="category"><h3>${esc(tr(c.name_en,c.name_ar))}</h3></div>`).join("");
+}
+function renderFilters(){
+ const options=[{id:"all",en:"All Products",ar:"كل المنتجات"},...categoriesData.map(c=>({id:c.id,en:c.name_en,ar:c.name_ar}))];
+ document.getElementById("filters").innerHTML=options.map(c=>`<button data-filter="${esc(c.id)}" class="${String(filter)===String(c.id)?"active":""}" onclick="setFilter('${esc(c.id)}')">${esc(tr(c.en,c.ar))}</button>`).join("");
+}
+function setFilter(id){filter=id;renderFilters();renderProducts();}
+function renderProducts(){
+ const items=productsData.filter(p=>filter==="all"||String(p.category_id||"")===String(filter));
+ document.getElementById("products").innerHTML=items.map(p=>`
+ <article class="product">
+ ${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(tr(p.name_en,p.name_ar))}" loading="lazy">`:`<div class="visual">🎁</div>`}
+ <h3>${esc(tr(p.name_en,p.name_ar))}</h3>
+ <p>${esc(tr(p.description_en,p.description_ar))}</p>
+ <label>${lang==="en"?"Quantity":"الكمية"}</label>
+ <select id="qty-${esc(p.id)}">${[1,5,10,20,50,100].map(n=>`<option value="${n}">${n}</option>`).join("")}</select>
+ <button onclick="addProduct('${esc(p.id)}')">${lang==="en"?"Add to My Selection":"إضافة لاختياراتي"}</button>
+ </article>`).join("")||`<p>${lang==="en"?"No products available yet.":"لا توجد منتجات متاحة حاليًا"}</p>`;
 }
 function renderSelection(){
  const el=document.getElementById("selectionItems");
  const ids=Object.keys(selection);
  if(!ids.length){el.innerHTML=`<p>${lang==="en"?"No products selected yet.":"لم تختاري أي منتجات حتى الآن"}</p>`;return;}
- el.innerHTML=ids.map(id=>{const p=productsData.find(x=>x.id===Number(id));return `<div class="selection-item"><span>${p[lang]} × ${selection[id]}</span><button onclick="removeProduct(${id})">${lang==="en"?"Remove":"حذف"}</button></div>`}).join("");
+ el.innerHTML=ids.map(id=>{const p=productsData.find(x=>x.id===id);return p?`<div class="selection-item"><span>${esc(tr(p.name_en,p.name_ar))} × ${selection[id]}</span><button onclick="removeProduct('${esc(id)}')">${lang==="en"?"Remove":"حذف"}</button></div>`:"";}).join("");
 }
-function removeProduct(id){delete selection[id];renderSelection()}
+function addProduct(id){const qty=Number(document.getElementById("qty-"+id).value);selection[id]=(selection[id]||0)+qty;renderSelection();document.getElementById("my-selection").scrollIntoView({behavior:"smooth"});}
+function removeProduct(id){delete selection[id];renderSelection();}
 function sendWhatsApp(){
  const ids=Object.keys(selection);
- if(!ids.length){alert(lang==="en"?"Please select at least one product first.":"من فضلك اختاري منتج واحد على الأقل");return;}
+ if(!ids.length){alert(lang==="en"?"Please select a product first.":"من فضلك اختاري منتج واحد على الأقل");return;}
  let msg=lang==="en"?"Hello NAOMI, I would like to request a quotation for:\n":"مرحبًا NAOMI، أريد طلب عرض سعر للمنتجات التالية:\n";
- ids.forEach(id=>{const p=productsData.find(x=>x.id===Number(id));msg+=`- ${p[lang]} x ${selection[id]}\n`;});
+ ids.forEach(id=>{const p=productsData.find(x=>x.id===id);if(p)msg+=`- ${tr(p.name_en,p.name_ar)} x ${selection[id]}\n`;});
  const note=document.getElementById("customerNote").value.trim();
  if(note)msg+=(lang==="en"?"Notes: ":"ملاحظات: ")+note;
  window.open("https://wa.me/201090368301?text="+encodeURIComponent(msg),"_blank");
 }
+function renderProjects(){
+ document.getElementById("projectsGrid").innerHTML=projectsData.map(p=>`<article class="product">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(tr(p.title_en,p.title_ar))}" loading="lazy">`:""}<h3>${esc(tr(p.title_en,p.title_ar))}</h3><p>${esc(tr(p.description_en,p.description_ar))}</p></article>`).join("")||`<p>${lang==="en"?"Projects will be added soon.":"سيتم إضافة المشروعات قريبًا"}</p>`;
+}
+function renderCatalogs(){
+ document.getElementById("catalogsGrid").innerHTML=catalogsData.map(c=>`<div class="category"><h3>${esc(tr(c.title_en,c.title_ar))}</h3><a class="btn" href="${esc(c.file_url)}" target="_blank" rel="noopener">${lang==="en"?"Open PDF":"فتح الكتالوج"}</a></div>`).join("");
+}
 function toggleLanguage(){
- lang=lang==="en"?"ar":"en";
- document.documentElement.lang=lang;
- document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ lang=lang==="en"?"ar":"en";document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
  document.getElementById("languageButton").textContent=lang==="en"?"العربية":"English";
  document.querySelectorAll("[data-en][data-ar]").forEach(el=>el.textContent=el.dataset[lang]);
  document.getElementById("customerNote").placeholder=lang==="en"?"Tell us about your requirements...":"اكتبي تفاصيل طلبك هنا...";
- renderProducts();renderSelection();
+ renderCategories();renderFilters();renderProducts();renderSelection();renderProjects();renderCatalogs();
 }
-document.querySelectorAll("#filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;renderProducts()}));
-renderProducts();
+
+function showTab(id,button){
+ ["productsTab","categoriesTab","projectsTab","catalogsTab"].forEach(x=>document.getElementById(x).hidden=x!==id);
+ document.querySelectorAll(".admin-nav button").forEach(b=>b.classList.toggle("active",b===button));
+}
+function goAdmin(){
+ document.getElementById("publicView").hidden=true;document.getElementById("adminView").hidden=false;
+ document.getElementById("mainNav").hidden=true;
+ window.scrollTo(0,0);
+}
+function goPublic(){
+ document.getElementById("publicView").hidden=false;document.getElementById("adminView").hidden=true;
+ document.getElementById("mainNav").hidden=false;
+}
+window.addEventListener("hashchange",()=>{if(location.hash==="#admin")goAdmin();else goPublic();});
+if(location.hash==="#admin")goAdmin();
+
+async function login(){
+ const email=document.getElementById("loginEmail").value.trim();
+ const password=document.getElementById("loginPassword").value;
+ const out=document.getElementById("loginStatus");out.textContent="Signing in...";
+ if(email.toLowerCase()!==ADMIN_EMAIL.toLowerCase()){out.textContent="This email is not the configured administrator.";return;}
+ const {error}=await sb.auth.signInWithPassword({email,password});
+ if(error){out.textContent=error.message;return;}
+ out.textContent="Signed in.";
+ await checkSession();
+}
+async function logout(){await sb.auth.signOut();await checkSession();}
+async function checkSession(){
+ const {data:{session}}=await sb.auth.getSession();
+ const allowed=session&&session.user.email?.toLowerCase()===ADMIN_EMAIL.toLowerCase();
+ document.getElementById("authPanel").hidden=!!allowed;
+ document.getElementById("dashboard").hidden=!allowed;
+ if(allowed){document.getElementById("adminWelcome").textContent="Signed in as "+session.user.email;await loadAdmin();}
+}
+sb.auth.onAuthStateChange(()=>{checkSession();});
+
+async function loadAdmin(){
+ const [c,p,pr,ca]=await Promise.all([
+  sb.from("categories").select("*").order("sort_order"),
+  sb.from("products").select("*").order("sort_order"),
+  sb.from("projects").select("*").order("sort_order"),
+  sb.from("catalogs").select("*").order("created_at",{ascending:false})
+ ]);
+ const errors=[c.error,p.error,pr.error,ca.error].filter(Boolean);
+ if(errors.length){say(errors.map(e=>e.message).join("\n"));return;}
+ categoriesData=c.data||[];renderCategoryOptions();renderAdminCategories();renderAdminProducts(p.data||[]);renderAdminProjects(pr.data||[]);renderAdminCatalogs(ca.data||[]);
+}
+function renderCategoryOptions(){
+ document.getElementById("productCategory").innerHTML='<option value="">No category</option>'+categoriesData.map(c=>`<option value="${esc(c.id)}">${esc(c.name_en)} / ${esc(c.name_ar)}</option>`).join("");
+}
+function renderAdminProducts(items){
+ document.getElementById("adminProducts").innerHTML=items.map(p=>`<div class="admin-list-item">${p.image_url?`<img src="${esc(p.image_url)}" alt="">`:""}<span><b>${esc(p.name_en)}</b><br>${esc(p.name_ar)} · ${p.is_published?"Published":"Hidden"}</span><span><button class="secondary" onclick="editProduct('${esc(p.id)}')">Edit</button> <button class="danger" onclick="deleteRecord('products','${esc(p.id)}')">Delete</button></span></div>`).join("")||"No products yet.";
+}
+function editProduct(id){
+ sb.from("products").select("*").eq("id",id).single().then(({data:p,error})=>{
+ if(error){say(error.message);return;}
+ document.getElementById("productId").value=p.id;document.getElementById("productEn").value=p.name_en||"";document.getElementById("productAr").value=p.name_ar||"";
+ document.getElementById("productCategory").value=p.category_id||"";document.getElementById("descEn").value=p.description_en||"";document.getElementById("descAr").value=p.description_ar||"";
+ document.getElementById("productOrder").value=p.sort_order||0;document.getElementById("productPublished").checked=p.is_published;
+ document.getElementById("productFormTitle").textContent="Edit Product";document.getElementById("productsTab").scrollIntoView({behavior:"smooth"});
+ });
+}
+function resetProductForm(){document.getElementById("productForm").reset();document.getElementById("productId").value="";document.getElementById("productFormTitle").textContent="Add Product";}
+document.getElementById("productForm").addEventListener("submit",async e=>{
+ e.preventDefault();try{
+ const id=document.getElementById("productId").value;const old=id?productsData.find(p=>p.id===id):null;
+ let image_url=old?.image_url||null;const file=document.getElementById("productImage").files[0];if(file)image_url=await uploadFile(file,"products");
+ const row={name_en:document.getElementById("productEn").value.trim(),name_ar:document.getElementById("productAr").value.trim(),category_id:document.getElementById("productCategory").value||null,description_en:document.getElementById("descEn").value.trim(),description_ar:document.getElementById("descAr").value.trim(),image_url,sort_order:Number(document.getElementById("productOrder").value)||0,is_published:document.getElementById("productPublished").checked,updated_at:new Date().toISOString()};
+ const result=id?await sb.from("products").update(row).eq("id",id):await sb.from("products").insert(row);
+ if(result.error)throw result.error;say("Product saved successfully.");resetProductForm();await loadAdmin();await loadPublic();
+ }catch(err){say("Could not save product: "+err.message);}
+});
+function renderAdminCategories(){
+ document.getElementById("adminCategories").innerHTML=categoriesData.map(c=>`<div class="admin-list-item"><span><b>${esc(c.name_en)}</b> / ${esc(c.name_ar)} · ${c.is_visible?"Visible":"Hidden"}</span><span><button class="secondary" onclick="editCategory('${esc(c.id)}')">Edit</button> <button class="danger" onclick="deleteRecord('categories','${esc(c.id)}')">Delete</button></span></div>`).join("")||"No categories yet.";
+}
+function editCategory(id){
+ const c=categoriesData.find(x=>x.id===id);if(!c)return;
+ document.getElementById("categoryId").value=c.id;document.getElementById("categoryEn").value=c.name_en;document.getElementById("categoryAr").value=c.name_ar;document.getElementById("categoryOrder").value=c.sort_order||0;document.getElementById("categoryVisible").checked=c.is_visible;
+}
+function resetCategoryForm(){document.getElementById("categoryForm").reset();document.getElementById("categoryId").value="";}
+document.getElementById("categoryForm").addEventListener("submit",async e=>{
+ e.preventDefault();try{
+ const id=document.getElementById("categoryId").value;const row={name_en:document.getElementById("categoryEn").value.trim(),name_ar:document.getElementById("categoryAr").value.trim(),sort_order:Number(document.getElementById("categoryOrder").value)||0,is_visible:document.getElementById("categoryVisible").checked};
+ const r=id?await sb.from("categories").update(row).eq("id",id):await sb.from("categories").insert(row);
+ if(r.error)throw r.error;say("Category saved.");resetCategoryForm();await loadAdmin();await loadPublic();
+ }catch(err){say("Could not save category: "+err.message);}
+});
+function renderAdminProjects(items){
+ document.getElementById("adminProjects").innerHTML=items.map(p=>`<div class="admin-list-item">${p.image_url?`<img src="${esc(p.image_url)}" alt="">`:""}<span><b>${esc(p.title_en)}</b> · ${p.is_published?"Published":"Hidden"}</span><span><button class="secondary" onclick="editProject('${esc(p.id)}')">Edit</button> <button class="danger" onclick="deleteRecord('projects','${esc(p.id)}')">Delete</button></span></div>`).join("")||"No projects yet.";
+}
+async function editProject(id){
+ const {data:p,error}=await sb.from("projects").select("*").eq("id",id).single();if(error){say(error.message);return;}
+ document.getElementById("projectId").value=p.id;document.getElementById("projectEn").value=p.title_en||"";document.getElementById("projectAr").value=p.title_ar||"";
+ document.getElementById("projectDescEn").value=p.description_en||"";document.getElementById("projectDescAr").value=p.description_ar||"";document.getElementById("projectOrder").value=p.sort_order||0;document.getElementById("projectPublished").checked=p.is_published;
+}
+function resetProjectForm(){document.getElementById("projectForm").reset();document.getElementById("projectId").value="";}
+document.getElementById("projectForm").addEventListener("submit",async e=>{
+ e.preventDefault();try{
+ const id=document.getElementById("projectId").value;const {data:old}=id?await sb.from("projects").select("*").eq("id",id).single():{data:null};
+ let image_url=old?.image_url||null;const file=document.getElementById("projectImage").files[0];if(file)image_url=await uploadFile(file,"projects");
+ const row={title_en:document.getElementById("projectEn").value.trim(),title_ar:document.getElementById("projectAr").value.trim(),description_en:document.getElementById("projectDescEn").value.trim(),description_ar:document.getElementById("projectDescAr").value.trim(),image_url,sort_order:Number(document.getElementById("projectOrder").value)||0,is_published:document.getElementById("projectPublished").checked};
+ const r=id?await sb.from("projects").update(row).eq("id",id):await sb.from("projects").insert(row);if(r.error)throw r.error;
+ say("Project saved.");resetProjectForm();await loadAdmin();await loadPublic();
+ }catch(err){say("Could not save project: "+err.message);}
+});
+function renderAdminCatalogs(items){
+ document.getElementById("adminCatalogs").innerHTML=items.map(c=>`<div class="admin-list-item"><span><b>${esc(c.title_en)}</b> / ${esc(c.title_ar)} · ${c.is_published?"Published":"Hidden"}</span><span><button class="secondary" onclick="editCatalog('${esc(c.id)}')">Edit</button> <button class="danger" onclick="deleteRecord('catalogs','${esc(c.id)}')">Delete</button></span></div>`).join("")||"No catalogs yet.";
+}
+async function editCatalog(id){
+ const {data:c,error}=await sb.from("catalogs").select("*").eq("id",id).single();if(error){say(error.message);return;}
+ document.getElementById("catalogId").value=c.id;document.getElementById("catalogEn").value=c.title_en||"";document.getElementById("catalogAr").value=c.title_ar||"";document.getElementById("catalogPublished").checked=c.is_published;
+}
+function resetCatalogForm(){document.getElementById("catalogForm").reset();document.getElementById("catalogId").value="";}
+document.getElementById("catalogForm").addEventListener("submit",async e=>{
+ e.preventDefault();try{
+ const id=document.getElementById("catalogId").value;const {data:old}=id?await sb.from("catalogs").select("*").eq("id",id).single():{data:null};
+ let file_url=old?.file_url||null;const file=document.getElementById("catalogFile").files[0];if(file)file_url=await uploadFile(file,"catalogs");
+ if(!file_url)throw new Error("Please choose a PDF file.");
+ const row={title_en:document.getElementById("catalogEn").value.trim(),title_ar:document.getElementById("catalogAr").value.trim(),file_url,is_published:document.getElementById("catalogPublished").checked};
+ const r=id?await sb.from("catalogs").update(row).eq("id",id):await sb.from("catalogs").insert(row);if(r.error)throw r.error;
+ say("Catalog saved.");resetCatalogForm();await loadAdmin();await loadPublic();
+ }catch(err){say("Could not save catalog: "+err.message);}
+});
+async function deleteRecord(table,id){
+ if(!confirm("Are you sure you want to delete this record?"))return;
+ const {error}=await sb.from(table).delete().eq("id",id);if(error){say("Delete failed: "+error.message);return;}
+ say("Record deleted.");await loadAdmin();await loadPublic();
+}
+(async()=>{
+ if(!SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")){
+ document.getElementById("loadingProducts").hidden=false;
+ document.getElementById("loadingProducts").textContent="Setup needed: add your Supabase publishable key in the code.";
+ return;
+ }
+ renderSelection();await loadPublic();await checkSession();
+})();
 </script>
 </body>
 </html>
